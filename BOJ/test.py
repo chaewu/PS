@@ -1,26 +1,40 @@
-# # 정답 코드 참고 파일
-#
-# # 1929
-# def isPrime(num):
-#     if num==1:
-#         return False
-#     else:
-#         for i in range(2, int(num**0.5)+1):
-#             if num%i == 0:
-#                 return False
-#         return True
-#
-# M, N = map(int, input().split())
-#
-# for i in range(M, N+1):
-#     if isPrime(i):
-#         print(i)
+res = 0
+ajsl = int(input())
 
-n, m = map(int, input().split())
+while True:
+  if ajsl // 50000 > 0:
+    ajsl -= 50000
+    res += 1
 
-if n <= m:
-    n, m = m, n
+  elif ajsl // 10000 > 0:
+    ajsl -= 10000
+    res += 1
 
-rsnd = list(range(n, m + 1))
+  elif ajsl // 5000 > 0:
+    ajsl -= 5000
+    res += 1
 
-print(*rsnd)
+  elif ajsl // 1000 > 0:
+    ajsl -= 1000
+    res += 1
+
+  elif ajsl // 500 > 0:
+    ajsl -= 500
+    res += 1
+
+  elif ajsl // 100 > 0:
+    ajsl -= 100
+    res += 1
+
+  elif ajsl // 50 > 0:
+    ajsl -= 50
+    res += 1
+
+  elif ajsl // 10 > 0:
+    ajsl -= 10
+    res += 1
+
+  else:
+    break
+
+print(res)
