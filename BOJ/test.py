@@ -1,40 +1,23 @@
-res = 0
-ajsl = int(input())
+# 코드 테스트를 위한 파일입니다
 
-while True:
-  if ajsl // 50000 > 0:
-    ajsl -= 50000
-    res += 1
+n = int(input())  # 컴퓨터 개수
+v = int(input())  # 연결선 개수
+graph = [[] for i in range(n + 1)]  # 그래프 2차원 배열로 초기화
+visited = [0] * (n + 1)  # 방문한 컴퓨터 표시
 
-  elif ajsl // 10000 > 0:
-    ajsl -= 10000
-    res += 1
+for i in range(v):  # 그래프 생성
+    a, b = map(int, input().split())
+    graph[a] += [b]  # a에 b 연결
+    graph[b] += [a]  # b에 a 연결 -> 양방향
 
-  elif ajsl // 5000 > 0:
-    ajsl -= 5000
-    res += 1
 
-  elif ajsl // 1000 > 0:
-    ajsl -= 1000
-    res += 1
+def dfs(ver):
+    visited[ver] = 1
+    for i in graph[ver]:
+        if visited[i] == 0:
+            dfs(i)
 
-  elif ajsl // 500 > 0:
-    ajsl -= 500
-    res += 1
 
-  elif ajsl // 100 > 0:
-    ajsl -= 100
-    res += 1
+dfs(1)
 
-  elif ajsl // 50 > 0:
-    ajsl -= 50
-    res += 1
-
-  elif ajsl // 10 > 0:
-    ajsl -= 10
-    res += 1
-
-  else:
-    break
-
-print(res)
+print(sum(visited) - 1)
