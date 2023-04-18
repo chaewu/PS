@@ -1,8 +1,14 @@
-""" 대충 풀이 생각 해봅시당
-일단 꼭짓점의 좌표가 만약 양수 다? 가장 높은 값이 직사각형의 각 꼭짓점이 됩니다. (최대 - 최저 = 한변의 길이) you know i'm saying? (유남쌩)
--면 가장 작은 값이 꼭짓점으로 잡으면 되겟죠? 해봅시다.
-"""
-
 N = int(input())
 
+x_list = []  # 각각 x값과 y값을 저장할 리스트 생성
+y_list = []
 
+for i in range(N):
+    x, y = map(int, input().split())
+    x_list.append(x)
+    y_list.append(y)
+
+if max(x_list) == min(x_list) or max(y_list) == min(y_list):
+    print(0)
+else:
+   print((max(x_list) - min(x_list)) * (max(y_list) - min(y_list)))
