@@ -6,4 +6,3 @@ while 1:
     while i**N < B:
         i += 1
     print(i if i**N-B < B-(i-1)**N else i-1)
-
