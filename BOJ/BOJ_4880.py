@@ -5,4 +5,4 @@ while 1:
     if b-a == c-b:
         print(f"AP {c + c-b}")
     else:
-        print(f"GP {c * (c//b)}")''
+        print(f"GP {c * (c//b)}")
