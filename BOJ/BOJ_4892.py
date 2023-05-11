@@ -11,4 +11,4 @@ while 1:
         print(f"{i}. even {n4}")
     else:
         print(f"{i}. odd {n4}")
-    i += 1
+    i += 11
