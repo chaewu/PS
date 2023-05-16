@@ -10,4 +10,4 @@ def sol(base, expo):
 
 for i in range(int(input())):
     a, b = map(int, input().split())
-    print(sol(a, b)
+    print(sol(a, b))
